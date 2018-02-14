@@ -1,5 +1,14 @@
-require "receptive/version"
+# frozen_string_literal: true
+
+require 'receptive/version'
+require 'opal'
 
 module Receptive
-  # Your code goes here...
+  PATHS = ["#{__dir__}/../lib-opal".freeze]
+
+  def self.paths
+    PATHS
+  end
 end
+
+Receptive.paths.each { |path|  Opal.append_path path }

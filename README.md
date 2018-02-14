@@ -1,8 +1,14 @@
 # Receptive
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/receptive`. To experiment with that code, run `bin/console` for an interactive prompt.
+Receptive is a toolkit that will help you add behavior to your existing, server-generated HTML. It's not intended for single-page-application but rather about taking care of specific DOM nodes.
 
-TODO: Delete this and the text above, and describe your gem
+This is perfect for you if:
+
+- **you already generate all your views from the server** (and don't want to throw everything away following the latest JavaScript fad)
+- **you need your site to work without JavaScript** for SEO or any other reasons
+- **you have a bunch of jQuery stuff around** and always wanted to organize it properly
+- **you like Ruby** and don't want to get caught by all the subtle quirks of JavaScript
+
 
 ## Installation
 
@@ -16,13 +22,44 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
 
-    $ gem install receptive
+## How it works
 
-## Usage
+Just keep your HTML as it is:
 
-TODO: Write usage instructions here
+```html
+<div class="hello-world">
+  <input type="text">
+  <button>Greet</button>
+  <span class="output"></span>
+</div>
+```
+
+Then write a view with a reference to it:
+
+```rb
+class HelloWorld
+  extend Receptive::View
+  self.selector = ".hello-world"
+
+  on(:click, 'button') do |event|
+    @greeting_text = find('input').text
+    render!
+  end
+
+  def self.render
+    find('.output').text = @greeting_text
+  end
+end
+```
+
+Read on in the [handbook](./HANDBOOK.md)
+
+## Other features
+
+- script[async] compatible
+- pjax/turbolinks compatible
+
 
 ## Development
 

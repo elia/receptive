@@ -1,0 +1,43 @@
+PATH
+  remote: .
+  specs:
+    receptive (0.1.0.alpha)
+      opal (>= 0.10.5, < 0.12)
+      opal-jquery (~> 0.4.2)
+      opal-minitest (= 0.0.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.0.5)
+    hike (1.2.3)
+    minitest (5.11.3)
+    opal (0.10.5)
+      hike (~> 1.2)
+      sourcemap (~> 0.1.0)
+      sprockets (~> 3.1)
+      tilt (>= 1.4)
+    opal-jquery (0.4.2)
+      opal (>= 0.7.0, < 0.11.0)
+    opal-minitest (0.0.5)
+      opal (>= 0.8)
+      rake (~> 10)
+    rack (2.0.4)
+    rake (10.5.0)
+    sourcemap (0.1.1)
+    sprockets (3.7.1)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  receptive!
+
+BUNDLED WITH
+   1.16.1

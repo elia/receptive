@@ -5,7 +5,7 @@ class ReceptiveTest < Minitest::Test
     refute_nil ::Receptive::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_path_has_been_added_to_opal
+    assert (Opal.paths & Receptive.paths) == Receptive.paths
   end
 end
