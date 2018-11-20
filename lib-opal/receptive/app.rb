@@ -25,10 +25,15 @@ module Receptive::App
     trigger('app:started', self)
 
     # Managing dom:ready for sync & async script tags
-    app_loaded = ->*{ trigger('app:loaded') }
+    app_loaded = ->*{
+      `console.log(2, document.readyState)`
+      trigger('app:loaded')
+      trigger('ready')
+    }
 
     %x{
-      if (document.readyState === 'complete') {
+      console.log(document.readyState)
+      if (document.readyState === 'interactive') {
         setTimeout(#{app_loaded}, 1);
       } else {
         document.addEventListener('DOMContentLoaded', #{app_loaded}, false);

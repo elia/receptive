@@ -1,4 +1,5 @@
 require 'console'
+require 'receptive/jquery'
 
 module Receptive
   def self.silence_logs

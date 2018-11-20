@@ -14,6 +14,7 @@ The README example, annotated:
 
 ```rb
 require 'opal'
+require 'jquery'                                  # your own jQuery version
 require 'receptive'
 
 class HelloWorld
@@ -22,8 +23,8 @@ class HelloWorld
   self.selector = ".hello-world"                  # this will set the root-node for our view
 
                                                   # `on` takes an event, and optionally a selector
-  on(:click, 'button') do |event|                 # leaving the selector black will listen for events
-                                                  # on the root-node
+                                                  # leaving the selector black will listen for events
+  on :click, 'button' do |event|                  # on the root-node
 
     @greeting_text = find('input').text           # `find` operates only on inside the root-node
 
@@ -43,6 +44,7 @@ Receptive::App.run
 *upcoming chapters…*
 
 ## Application lifecycle
+## Events
 ## Incremental DOM
 ## The `render!` method
 ## `window` and `document` events
