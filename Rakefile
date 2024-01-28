@@ -9,12 +9,12 @@ end
 
 task :test_opal do
   require 'opal'
-  ENV['RUBYOPT'] += ' -rbundler/setup -ropal/minitest '
+  ENV['RUBYOPT'] += ' -rbundler/setup -ropal-jquery'
   files = nil
   cd('test-opal') do
     files = Dir['**/*_test.rb'].map{|f| "-r#{f.shellescape}"}
   end
-  sh "opal -Ilib-opal -Itest-opal #{files.join(' ')} -e ':done'"
+  sh "opal -Ilib-opal -gminitest -rminitest -setc -srubygems -stempfile -Itest-opal #{files.join(' ')} -e ':done'"
 end
 
 task :test => [:test_mri, :test_opal]

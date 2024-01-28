@@ -1,37 +1,39 @@
+GIT
+  remote: https://github.com/opal/opal-jquery
+  revision: 5dcc673d0b5a34a3278526d258bf6a672938cac1
+  specs:
+    opal-jquery (0.5.1)
+      opal (>= 0.10.0, < 2.0)
+
 PATH
   remote: .
   specs:
     receptive (0.2.0)
       opal (~> 1.0)
-      opal-jquery (~> 0.4.2)
+      opal-jquery (~> 0.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    minitest (5.11.3)
+    minitest (5.21.1)
     opal (1.8.2)
       ast (>= 2.3.0)
       parser (~> 3.0, >= 3.0.3.2)
-    opal-jquery (0.4.6)
-      opal (>= 0.10.0, < 2.0)
-    opal-minitest (0.0.5)
-      opal (>= 0.8)
-      rake (~> 10)
     parser (3.3.0.4)
       ast (~> 2.4.1)
       racc
     racc (1.7.3)
-    rake (10.5.0)
+    rake (13.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bundler
-  minitest (~> 5.0)
-  opal-minitest (= 0.0.5)
-  rake
+  minitest
+  opal-jquery!
+  rake (>= 13)
   receptive!
 
 BUNDLED WITH
