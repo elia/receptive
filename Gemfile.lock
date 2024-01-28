@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    receptive (0.2.0)
+    receptive (0.3.0)
       opal (~> 1.0)
       opal-jquery (~> 0.5)
 
